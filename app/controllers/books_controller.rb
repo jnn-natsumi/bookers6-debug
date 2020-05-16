@@ -7,14 +7,18 @@ class BooksController < ApplicationController
   	@book = Book.find(params[:id])
     @booknew = Book.new
     @user = User.find_by(id: @book.user_id)
-    # @user = User.find_by(id: @book.user_id)
+    @book_comment = BookComment.new
+    # 追加
+    @book_comments = @book.book_comments
   end
 
   def index
     # 追加　0511
     @user = current_user
     @book = Book.new
-  	@books = Book.all #一覧表示するためにBookモデルの情報を全てくださいのall
+    # @fbook = Book.find(params[:id])
+  	@books = Book.all
+    #一覧表示するためにBookモデルの情報を全てくださいのall
   end
 
   def create
@@ -46,14 +50,14 @@ class BooksController < ApplicationController
   def destroy
     @book = Book.find(params[:id])
     @book.destroy
-    redirect_to books_path
+    redirect_to books_path, notice: "successfully delete book!"
   end
 
-  def delete
-  	@book = Book.find(params[:id])
-  	@book.destoy
-  	redirect_to books_path, notice: "successfully delete book!"
-  end
+  # def delete
+  # 	@book = Book.find(params[:id])
+  # 	@book.destoy
+  # 	redirect_to books_path, notice: "successfully delete book!"
+  # end
 
   def correct_book
     @book = Book.find(params[:id])

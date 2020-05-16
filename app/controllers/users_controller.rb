@@ -8,8 +8,8 @@ class UsersController < ApplicationController
     # @user = current_user
   	@user = User.find(params[:id])
   	@book = Book.new #new bookの新規投稿で必要（保存処理はbookコントローラー側で実施）
-    # @books = @user.books
-    @books = current_user.books
+    @books = @user.books
+    # @books = current_user.books
   end
 
   def index
