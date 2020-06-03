@@ -1,0 +1,2 @@
+// create.html.erbと同様の処理
+$('#favorites_buttons_<%= @book.id %>').html("<%= j(render partial: 'favorites/favorite', locals: {book: @book}) %>");

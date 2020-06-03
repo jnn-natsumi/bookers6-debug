@@ -1,0 +1,11 @@
+	<!-- コメント記入欄 -->
+  <%= form_with(model: [@book, @book_comment], url: book_book_comments_path(@book)) do |f| %>
+ <div class="row">
+   <div class="col-sm-12">
+    <%= f.text_area :comment, rows:'5', class: "form-control"%>
+    <%= f.submit "送信", class: "btn btn-lg btn-base-1 mt-20 pull-right" %>
+<% end %>
+    <!--  placeholder: "コメントをここに"  -->
+  </div>
+</div>
+			<!-- コメント記入欄 -->

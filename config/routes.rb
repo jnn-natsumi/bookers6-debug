@@ -10,5 +10,6 @@ Rails.application.routes.draw do
   	resource :favorites, only:[:create, :destroy]
     resources :book_comments, only:[:create, :destroy]
     # sがあるかどうかでidがあるかどうか　commentsにはsが必要
+    # 見やすさなどでネストしているだけ
   end
 end

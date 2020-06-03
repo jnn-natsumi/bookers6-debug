@@ -1,0 +1,14 @@
+<!-- コメント一覧 -->
+<table class="table">
+	<% book_comments.each do |c| %>
+	<tr>
+		<td><%= c.user.name %></td>
+		<td><%= c.comment %></td>
+		<% if current_user == c.user %>
+		<td><%= link_to "Destroy", book_book_comment_path(book, c), method: :delete,remote: true,class: "btn-sm btn-danger" %></td>
+		<% end %>
+	</tr>
+	<% end %>
+</table>
+<!-- tr td th の違い -->
+<!-- コメント一覧 -->

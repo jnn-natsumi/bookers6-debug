@@ -1,0 +1,3 @@
+// '#favorites_buttons_<%= @book.id %>'部分のhtmlだけrenderで部分的に更新するという処理
+$('#favorites_buttons_<%= @book.id %>').html("<%= j(render partial: 'favorites/favorite', locals: {book: @book}) %>");
+// 部分テンプレートの定義の部分：locals
