@@ -82,3 +82,9 @@ gem "refile-mini_magick"
 gem 'jquery-rails'
 gem 'byebug'
 gem 'pry-rails'
+
+gem 'dotenv-rails'
+
+group :production do
+  gem 'mysql2'
+end
